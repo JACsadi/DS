@@ -10,7 +10,7 @@ void dfs(int node) {
       for(int i = 0; i < adj_list[node].size(); i++) {
         for(int j = 0; j < 8; j++)  if(dep_mat[node][j]) dep_mat[adj_list[node][i]][j] = 1; // if b is dependent on a, them b is dependent on everything a is dependent on , so we are copying a's dependency on b
         dep_mat[adj_list[node][i]][node] = 1; // since b is dependent on a , dep_mat[1][0] will be 1
-        dfs(adj_list[node][i]);
+       if()  dfs(adj_list[node][i]);
       }
 }
 int main() {
@@ -31,6 +31,6 @@ int main() {
         for(int j =0; j <8; j++) {
          if(dep_mat[i][j]) printf("%c ", (char)('a'+j) );
         }
-        printf("\n");
+        printf("\n")
     }
 }
